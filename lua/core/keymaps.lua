@@ -6,10 +6,10 @@ vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>q", ":q<cr>")
 
 -- window navigation
-vim.keymap.set("n", "<C-J>", "<C-w><C-j>")
-vim.keymap.set("n", "<C-K>", "<C-w><C-k>")
-vim.keymap.set("n", "<C-L>", "<C-w><C-l>")
-vim.keymap.set("n", "<C-H>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-J>", "<C-W><C-J>")
+vim.keymap.set("n", "<C-K>", "<C-W><C-K>")
+vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
+vim.keymap.set("n", "<C-H>", "<C-W><C-H>")
 
 -- no use of arrow keys in normal mode
 vim.keymap.set("n", "<up>", "<Nop>")

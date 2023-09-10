@@ -60,7 +60,8 @@ local plugins = {
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	},
-	'williamboman/mason.nvim'
+	'williamboman/mason.nvim',
+	'rmagatti/auto-session',
 }
 
 local opts = {}
