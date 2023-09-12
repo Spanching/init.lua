@@ -45,22 +45,6 @@ local plugins = {
 	},
 	version = '^1.0.0', -- optional: only update when a new 1.x version is released
 	},
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     -- Required
-			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-			{'L3MON4D3/LuaSnip'},     -- Required
-		}
-	},
-	'williamboman/mason.nvim',
 	'rmagatti/auto-session',
 	{
 		"kylechui/nvim-surround",
@@ -72,6 +56,14 @@ local plugins = {
 			})
 		end
 	},
+	{
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	},
+	-- lsp setup
+	'williamboman/mason.nvim',
+	'williamboman/mason-lspconfig.nvim',
+	'neovim/nvim-lspconfig',
 }
 
 local opts = {}
