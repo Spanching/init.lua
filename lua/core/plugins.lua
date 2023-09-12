@@ -26,7 +26,14 @@ local plugins = {
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	'nvim-treesitter/nvim-treesitter',
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function ()
+			vim.cmd.colorscheme "catppuccin-frappe"
+		end
+	},
 	'mbbill/undotree',
 	{
 		"kdheepak/lazygit.nvim",
@@ -64,6 +71,12 @@ local plugins = {
 	'williamboman/mason.nvim',
 	'williamboman/mason-lspconfig.nvim',
 	'neovim/nvim-lspconfig',
+	'hrsh7th/nvim-cmp',
+	'hrsh7th/cmp-nvim-lsp',
+	'L3MON4D3/LuaSnip',
+	'saadparwaiz1/cmp_luasnip',
+	'm4xshen/autoclose.nvim',
+	'hrsh7th/cmp-nvim-lsp-signature-help'
 }
 
 local opts = {}
