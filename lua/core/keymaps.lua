@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- faster write, quit
 vim.keymap.set("n", "<leader>w", ":w<cr>")
@@ -35,3 +34,6 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Easy pasing from clipboard 
+vim.keymap.set("n", "<leader>p", "\"+p")

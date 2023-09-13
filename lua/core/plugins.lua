@@ -71,12 +71,33 @@ local plugins = {
 	'williamboman/mason.nvim',
 	'williamboman/mason-lspconfig.nvim',
 	'neovim/nvim-lspconfig',
-	'hrsh7th/nvim-cmp',
+	{
+		'hrsh7th/nvim-cmp',
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
+			"rafamadriz/friendly-snippets",
+		}
+	},
 	'hrsh7th/cmp-nvim-lsp',
-	'L3MON4D3/LuaSnip',
-	'saadparwaiz1/cmp_luasnip',
 	'm4xshen/autoclose.nvim',
-	'hrsh7th/cmp-nvim-lsp-signature-help'
+	'hrsh7th/cmp-nvim-lsp-signature-help',
+	-- end lsp setup
+	{
+		'stevearc/dressing.nvim',
+		opts = {},
+	},
+	{
+		"Pocco81/true-zen.nvim",
+		config = function()
+			require("true-zen").setup {
+				-- your config goes here
+				-- or just leave it empty :)
+			}
+		end,
+	}
 }
 
 local opts = {}

@@ -45,10 +45,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
+local luasnip = require('luasnip')
 cmp.setup {
+	completion = {
+		completeopt = "menu,menuone,preview,noselect"
+	},
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
@@ -73,6 +77,8 @@ cmp.setup {
 	}),
 	sources = {
 		{ name = 'nvim_lsp',},
+		{ name = 'luasnip',},
+		{ name = 'buffer',},
 		{ name = 'nvim_lsp_signature_help' },
 	},
 }
