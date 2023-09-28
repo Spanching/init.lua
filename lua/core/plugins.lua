@@ -112,7 +112,10 @@ local plugins = {
 				}
 			}
 		end
-	}
+	},
+	{
+		'gelguy/wilder.nvim',
+	},
 }
 
 local opts = {}
