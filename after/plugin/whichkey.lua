@@ -28,4 +28,14 @@ wk.register({
 		b = "Git Branch",
 	},
 	u = "Undo Tree",
+	w = "Write file",
+	c = {
+		name = "Code",
+		a = "Code action",
+	},
+	h = "Remove highlighting",
+	D = "Type definition",
+	p = "Paste from clipboard",
+	q = "Quit",
+	rn = "Rename Symbol"
 }, { prefix = "<leader>" })
