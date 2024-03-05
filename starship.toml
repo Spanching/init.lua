@@ -13,12 +13,13 @@ $azure\
 $env_var\
 $crystal\
 $sudo\
-$cmd_duration\
 $time\
 $status\
 $container\
 $shell\
-$character
+$python\
+$cmd_duration\
+$character\
 """
 
 [character]
@@ -94,7 +95,7 @@ symbol = " "
 
 [python]
 symbol = " "
-format = 'via [$symbol]($style)'
+format = 'via [$symbol$virtualenv]($style) '
 
 [ruby]
 symbol = " "

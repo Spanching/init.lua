@@ -21,7 +21,7 @@ local plugins = {
 		end,
 	},
 	{
-		'nvim-telescope/telescope.nvim', 
+		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
@@ -131,6 +131,12 @@ local plugins = {
 		-- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
 		{ '<leader>vc', '<cmd>VenvSelectCached<cr>' },
 	  },
+	},
+	{
+		'Vimjas/vim-python-pep8-indent'
+	},
+	{
+		'tell-k/vim-autopep8'
 	}
 }
 
