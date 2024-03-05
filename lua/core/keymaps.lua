@@ -37,3 +37,5 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Easy pasing from clipboard 
 vim.keymap.set("n", "<leader>p", "\"+p")
+
+vim.keymap.set("n", "<C-a>", "<C-o>")
