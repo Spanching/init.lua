@@ -2,7 +2,7 @@ local wk = require("which-key")
 
 wk.register({
 	f = {
-		name = "Find", 
+		name = "Find",
 		f = "Find File",
 		g = "Grep all files",
 		b = "Find Buffer",
@@ -10,7 +10,7 @@ wk.register({
 		r = "Find in Repository",
 	},
 	e = {
-		name = "Explorer", 
+		name = "Explorer",
 		e = "Toggle Explorer",
 		f = "Focus Explorer",
 	},
@@ -18,10 +18,10 @@ wk.register({
 		name = "Buffer",
 		n = "Buffer Next",
 		p = "Buffer Previous",
-		c = "Buffer Close"
+		c = "Buffer Close",
 	},
 	g = {
-		name = "Git", 
+		name = "Git",
 		g = "Open Lazy Git",
 		p = "Git Pull",
 		f = "Git Fetch",
@@ -29,6 +29,7 @@ wk.register({
 	},
 	u = "Undo Tree",
 	w = "Write file",
+	d = "Duplicate line",
 	c = {
 		name = "Code",
 		a = "Code action",
@@ -37,5 +38,5 @@ wk.register({
 	D = "Type definition",
 	p = "Paste from clipboard",
 	q = "Quit",
-	rn = "Rename Symbol"
+	rn = "Rename Symbol",
 }, { prefix = "<leader>" })

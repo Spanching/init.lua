@@ -6,19 +6,19 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
+	local api = require("nvim-tree.api")
 
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
 
-  -- default mappings
-  api.config.mappings.default_on_attach(bufnr)
+	-- default mappings
+	api.config.mappings.default_on_attach(bufnr)
 
-  -- custom mappings
-  vim.keymap.set('n', '<C-z>', api.node.open.vertical,        opts('Open vertical split'))
-  vim.keymap.set('n', '<C-x>', api.node.open.horizontal,        opts('Open horizontal split'))
-  vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
+	-- custom mappings
+	vim.keymap.set("n", "<leader>|", api.node.open.vertical, opts("Open vertical split"))
+	vim.keymap.set("n", "<leader>-", api.node.open.horizontal, opts("Open horizontal split"))
+	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
 end
 
 require("nvim-tree").setup({

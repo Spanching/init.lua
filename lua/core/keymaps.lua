@@ -35,7 +35,14 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Easy pasing from clipboard 
-vim.keymap.set("n", "<leader>p", "\"+p")
+-- Easy pasing from clipboard
+vim.keymap.set("n", "<leader>p", '"+p')
+
+-- Easy tabs in normal mode
+vim.keymap.set("n", "<leader>>", "v>")
+vim.keymap.set("n", "<leader><", "v<")
+
+-- Easy duplicate line
+vim.keymap.set("n", "<leader>d", "yyp")
 
 vim.keymap.set("n", "<C-a>", "<C-o>")
