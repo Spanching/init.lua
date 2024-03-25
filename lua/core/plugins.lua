@@ -25,6 +25,7 @@ local plugins = {
 		tag = "0.1.2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	"lewis6991/gitsigns.nvim",
 	"nvim-treesitter/nvim-treesitter",
 	{
 		"catppuccin/nvim",
@@ -69,10 +70,38 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	},
+	{
+		'nvim-java/nvim-java',
+		dependencies = {
+			'nvim-java/lua-async-await',
+			'nvim-java/nvim-java-core',
+			'nvim-java/nvim-java-test',
+			'nvim-java/nvim-java-dap',
+			'MunifTanjim/nui.nvim',
+			'neovim/nvim-lspconfig',
+			'mfussenegger/nvim-dap',
+			{
+				'williamboman/mason.nvim',
+				opts = {
+					registries = {
+						'github:nvim-java/mason-registry',
+						'github:mason-org/mason-registry',
+					},
+				},
+			}
+		},
+	},
 	-- lsp setup
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+	{
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp"
+	},
 	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
@@ -117,15 +146,12 @@ local plugins = {
 		end,
 	},
 	{
-		"gelguy/wilder.nvim",
-	},
-	{
 		"linux-cultist/venv-selector.nvim",
 		dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
 		opts = {
 			-- Your options go here
-			-- name = "venv",
-			-- auto_refresh = false
+			name = "venv",
+			auto_refresh = false
 		},
 		event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
 		keys = {
@@ -134,12 +160,6 @@ local plugins = {
 			-- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
 			{ "<leader>vc", "<cmd>VenvSelectCached<cr>" },
 		},
-	},
-	{
-		"Vimjas/vim-python-pep8-indent",
-	},
-	{
-		"tell-k/vim-autopep8",
 	},
 	{
 		"mfussenegger/nvim-jdtls",
@@ -160,6 +180,18 @@ local plugins = {
 		},
 	},
 	"hrsh7th/cmp-cmdline",
+	{
+		"AckslD/nvim-neoclip.lua",
+		requires = {
+			{ 'kkharji/sqlite.lua',           module = 'sqlite' },
+			{ 'nvim-telescope/telescope.nvim' },
+		},
+	},
+	{
+		"eatgrass/maven.nvim",
+		cmd = { "Maven", "MavenExec" },
+		dependencies = "nvim-lua/plenary.nvim",
+	},
 }
 
 local opts = {}

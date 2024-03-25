@@ -45,4 +45,8 @@ vim.keymap.set("n", "<leader><", "v<")
 -- Easy duplicate line
 vim.keymap.set("n", "<leader>d", "yyp")
 
+-- remap C-o for tmux
 vim.keymap.set("n", "<C-a>", "<C-o>")
+
+-- Show git changes 
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk")

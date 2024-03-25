@@ -9,6 +9,10 @@ wk.register({
 		h = "Find in Help",
 		r = "Find in Repository",
 	},
+	fm = {
+		name = "Format",
+		f = "Format File"
+	},
 	e = {
 		name = "Explorer",
 		e = "Toggle Explorer",
@@ -23,7 +27,7 @@ wk.register({
 	g = {
 		name = "Git",
 		g = "Open Lazy Git",
-		p = "Git Pull",
+		p = "Preview Hunk",
 		f = "Git Fetch",
 		b = "Git Branch",
 	},
