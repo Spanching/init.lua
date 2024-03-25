@@ -13,6 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	{
+		"ggandor/leap.nvim"
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()
@@ -69,27 +72,6 @@ local plugins = {
 	{
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
-	},
-	{
-		'nvim-java/nvim-java',
-		dependencies = {
-			'nvim-java/lua-async-await',
-			'nvim-java/nvim-java-core',
-			'nvim-java/nvim-java-test',
-			'nvim-java/nvim-java-dap',
-			'MunifTanjim/nui.nvim',
-			'neovim/nvim-lspconfig',
-			'mfussenegger/nvim-dap',
-			{
-				'williamboman/mason.nvim',
-				opts = {
-					registries = {
-						'github:nvim-java/mason-registry',
-						'github:mason-org/mason-registry',
-					},
-				},
-			}
-		},
 	},
 	-- lsp setup
 	"williamboman/mason.nvim",
@@ -164,6 +146,13 @@ local plugins = {
 		cmd = { "Maven", "MavenExec" },
 		dependencies = "nvim-lua/plenary.nvim",
 	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
+	},
+	'mfussenegger/nvim-dap',
+	'mfussenegger/nvim-jdtls'
 }
 
 local opts = {}

@@ -38,7 +38,12 @@ wk.register({
 		name = "Code",
 		a = "Code action",
 	},
-	h = "Remove highlighting",
+	h = {
+		name = "Harpoon",
+		a = "Append File",
+		r = "Remove File",
+		h = "Remove highlighting"
+	},
 	D = "Type definition",
 	p = "Paste from clipboard",
 	q = "Quit",

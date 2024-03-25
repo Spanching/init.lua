@@ -1,4 +1,4 @@
-local servers = { "pyright", "lua_ls", "jdtls" }
+local servers = { "pyright", "lua_ls", } -- "jdtls" }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
