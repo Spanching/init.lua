@@ -1,3 +1,3 @@
 require('maven').setup({
-	executable = "./mvnw"
+	executable = "mvn"
 })
