@@ -12,9 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	{
-		"ggandor/leap.nvim"
-	},
+	"ggandor/leap.nvim",
+	"lewis6991/gitsigns.nvim",
+	"nvim-treesitter/nvim-treesitter",
+	"mbbill/undotree",
+	"nvim-tree/nvim-tree.lua",
+	"rmagatti/auto-session",
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -28,8 +31,6 @@ local plugins = {
 		tag = "0.1.2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	"lewis6991/gitsigns.nvim",
-	"nvim-treesitter/nvim-treesitter",
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -38,14 +39,12 @@ local plugins = {
 			vim.cmd.colorscheme("catppuccin-frappe")
 		end,
 	},
-	"mbbill/undotree",
 	{
 		"kdheepak/lazygit.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	"nvim-tree/nvim-tree.lua",
 	{
 		"romgrk/barbar.nvim",
 		dependencies = {
@@ -58,7 +57,6 @@ local plugins = {
 		opts = {},
 		version = "^1.0.0", -- optional: only update when a new 1.x version is released
 	},
-	"rmagatti/auto-session",
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -77,7 +75,6 @@ local plugins = {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
     "mfussenegger/nvim-dap",
-    "jay-babu/mason-nvim-dap.nvim",
 	"mfussenegger/nvim-jdtls",
 	"neovim/nvim-lspconfig",
 	{

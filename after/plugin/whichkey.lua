@@ -24,6 +24,12 @@ wk.register({
 		p = "Buffer Previous",
 		c = "Buffer Close",
 	},
+	l = {
+		name = "Line",
+		d = "duplicate",
+		j = "Move Down",
+		k = "Move Up",
+	},
 	g = {
 		name = "Git",
 		g = "Open Lazy Git",
@@ -33,7 +39,11 @@ wk.register({
 	},
 	u = "Undo Tree",
 	w = "Write file",
-	d = "Duplicate line",
+	d = {
+		name = "Debug",
+		mcc = "Main Class Configs",
+		b = "Breakpoint",
+	},
 	c = {
 		name = "Code",
 		a = "Code action",
