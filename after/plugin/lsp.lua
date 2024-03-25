@@ -1,7 +1,28 @@
 local servers = { "pyright", "lua_ls", "jdtls" }
 
 require("mason").setup()
-require("mason-nvim-dap").setup()
+require('mason-nvim-dap').setup({
+	ensure_installed = { },
+	handlers = {
+		function(config)
+			-- all sources with no handler get passed here
+
+			-- Keep original functionality
+			require('mason-nvim-dap').default_setup(config)
+		end,
+		java = function(config)
+			config.adapters = {
+				type = "executable",
+				command = "/usr/bin/java",
+				args = {
+					"-m",
+					"debugpy.adapter",
+				},
+			}
+			require('mason-nvim-dap').default_setup(config) -- don't forget this!
+		end,
+	},
+})
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 })
@@ -40,7 +61,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-		vim.keymap.set({"n"}, "<space>fmf", vim.lsp.buf.format, opts)
+		vim.keymap.set({ "n" }, "<space>fmf", vim.lsp.buf.format, opts)
 	end,
 })
 

@@ -123,13 +123,6 @@ local plugins = {
 	},
 	"hrsh7th/cmp-cmdline",
 	{
-		"AckslD/nvim-neoclip.lua",
-		requires = {
-			{ 'kkharji/sqlite.lua',           module = 'sqlite' },
-			{ 'nvim-telescope/telescope.nvim' },
-		},
-	},
-	{
 		"eatgrass/maven.nvim",
 		cmd = { "Maven", "MavenExec" },
 		dependencies = "nvim-lua/plenary.nvim",
