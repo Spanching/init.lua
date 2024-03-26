@@ -4,7 +4,7 @@ local config = {
 	init_options = {
 		bundles = {
 			vim.fn.glob(
-			"/opt/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.52.0.jar")
+			"/opt/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.52.0.jar", 1)
 		}
 	}
 }
