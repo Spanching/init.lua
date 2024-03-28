@@ -10,6 +10,6 @@ local config = {
 }
 require('jdtls').start_or_attach(config)
 
-vim.keymap.set("n", '<leader>dmcc', function()
+vim.keymap.set("n", '<leader>dm', function()
 	require('jdtls.dap').setup_dap_main_class_configs()
 end)
