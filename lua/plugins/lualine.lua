@@ -7,6 +7,7 @@ return {
         globalstatus = true,
       },
 			sections = {
+        lualine_c = {'filename'},
 				lualine_x = {
 					{
 						require("noice").api.statusline.mode.get,
@@ -14,9 +15,6 @@ return {
 						color = { fg = "#ff9e64" },
 					}
 				},
-        lualine_c = {
-          require('auto-session.lib').current_session_name
-        }
 			},
 		})
 	end

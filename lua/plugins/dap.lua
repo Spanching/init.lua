@@ -13,7 +13,15 @@ return {
     },
     config = function()
       local dap = require('dap')
-
+      dap.configurations.java = {
+        {
+          type = 'java',
+          request = 'attach',
+          name = "Debug (Attach) - Remote",
+          hostName = "127.0.0.1",
+          port = 6105,
+        },
+      }
       local dapui = require("dapui")
       dapui.setup()
       dap.listeners.before.attach.dapui_config = function()
@@ -40,7 +48,7 @@ return {
       vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
       vim.keymap.set('n', '<Leader>dt', function() dap.terminate() end)
       vim.keymap.set('n', '<Leader>da', function() dap.restart() end)
-      vim.keymap.set('n', '<leader>dc', function () dapui.close() end)
+      vim.keymap.set('n', '<leader>dc', function() dapui.close() end)
       vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
         require('dap.ui.widgets').hover()
       end)

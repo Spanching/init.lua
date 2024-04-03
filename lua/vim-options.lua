@@ -31,3 +31,4 @@ for event, opt_tbls in pairs(aucmd_dict) do
         vim.api.nvim_create_autocmd(event, opt_tbl)
     end
 end
+

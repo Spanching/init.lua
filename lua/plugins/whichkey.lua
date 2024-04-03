@@ -18,6 +18,7 @@ return
         h = "Find in Help",
         r = "Find in Repository",
       },
+      nh = "No highlighting",
       fm = {
         name = "Format",
         f = "Format File"
@@ -32,6 +33,7 @@ return
         n = "Buffer Next",
         p = "Buffer Previous",
         c = "Buffer Close",
+        e = "Buffermanager Quick Menu"
       },
       l = {
         name = "Line",
@@ -69,14 +71,15 @@ return
         name = "Harpoon",
         a = "Append File",
         r = "Remove File",
-        h = "Remove highlighting"
+        e = "Quick Menu (Explorer)",
+        h = "Select 1",
+        j = "Select 2",
+        k = "Select 3",
+        l = "Select 4",
+        p = "Previous",
+        n = "Next",
       },
       D = "Type definition",
-      p = {
-        name = "persistence",
-        r = "Restore Session for path",
-        l = "Restore last Session",
-      },
       q = "Quit",
       rn = "Rename Symbol",
     }, { prefix = "<leader>" })

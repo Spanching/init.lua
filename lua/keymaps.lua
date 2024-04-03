@@ -23,7 +23,7 @@ vim.keymap.set("n", "<C-Left>", "1<C-w><", { noremap = true, silent = true})
 vim.keymap.set("n", "<C-Right>", "1<C-w>>", { noremap = true, silent = true})
 
 -- Remove Highlighting
-vim.keymap.set("n", "<leader>hh", vim.cmd.noh)
+vim.keymap.set("n", "<leader>nh", vim.cmd.noh)
 
 -- Center after down/up/next
 vim.keymap.set("n", "n", "nzz")
