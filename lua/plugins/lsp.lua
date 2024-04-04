@@ -3,11 +3,10 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
-	"mfussenegger/nvim-jdtls",
 	{
 		"hrsh7th/cmp-nvim-lsp",
 		config = function()
-			local servers = { "pyright", "lua_ls", "marksman" }
+			local servers = { "pyright", "lua_ls", "marksman"}
 
 			require("mason").setup()
 			require("mason-lspconfig").setup({
@@ -43,6 +42,7 @@ return {
 					local opts = { buffer = ev.buf }
 					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+					vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
@@ -105,6 +105,8 @@ return {
 					end, { "i", "s" }),
 				}),
 				sources = {
+                    -- Copilot
+                    { name = "copilot", group_index = 2 },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "buffer" },

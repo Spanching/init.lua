@@ -17,10 +17,10 @@ vim.keymap.set("n", "<left>", "<Nop>")
 vim.keymap.set("n", "<right>", "<Nop>")
 
 -- Resize with arrows
-vim.keymap.set("n", "<C-Up>", "1<C-w>+", { noremap = true, silent = true})
-vim.keymap.set("n", "<C-Down>", "1<C-w>-", { noremap = true, silent = true})
-vim.keymap.set("n", "<C-Left>", "1<C-w><", { noremap = true, silent = true})
-vim.keymap.set("n", "<C-Right>", "1<C-w>>", { noremap = true, silent = true})
+vim.keymap.set("n", "<C-Up>", "1<C-w>+", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Down>", "1<C-w>-", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Left>", "1<C-w><", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Right>", "1<C-w>>", { noremap = true, silent = true })
 
 -- Remove Highlighting
 vim.keymap.set("n", "<leader>nh", vim.cmd.noh)
