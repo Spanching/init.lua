@@ -206,3 +206,36 @@ sudo install lazygit /usr/local/bin
 ```
 sudo apt install nodejs npm
 ```
+
+# Using NVIM for Java Development
+
+## Install Eclipse language server
+
+Make sure maven is installed
+
+then 
+
+```
+git clone https://github.com/eclipse-jdtls/eclipse.jdt.ls.git
+echo "export JAVA_HOME=/path/to/java/17" >> ~/.bashrc
+./mvnw clean verify [-DSkipTests=true]
+sudo mv eclipse.jdt.ls /opt/
+```
+
+### Install Java-Debug bundle
+
+```
+git clone https://github.com/microsoft/java-debug.git
+cd java-debug
+./mvnw clean install
+sudo mv java-debug /opt/
+```
+
+### Install VSCode Java Test bundle
+
+```
+git clone https://github.com/microsoft/vscode-java-test.git
+npm install
+npm run build-plugin
+sudo mv vscode-java-test /opt/
+```

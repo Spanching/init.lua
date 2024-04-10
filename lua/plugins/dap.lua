@@ -46,7 +46,7 @@ return {
       vim.keymap.set('n', '<Leader>db', function() dap.toggle_breakpoint() end)
       vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
       vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
-      vim.keymap.set('n', '<Leader>dt', function() dap.terminate() end)
+      vim.keymap.set('n', '<Leader>dx', function() dap.terminate() end)
       vim.keymap.set('n', '<Leader>da', function() dap.restart() end)
       vim.keymap.set('n', '<leader>dc', function() dapui.close() end)
       vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()

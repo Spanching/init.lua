@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 -- faster write, quit
 vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>q", ":q<cr>")
+vim.keymap.set("n", "<leader>a", ":qa<cr>")
 
 -- window navigation
 vim.keymap.set("n", "<C-J>", "<C-W><C-J>")
@@ -44,4 +45,4 @@ vim.keymap.set("n", "<leader>lk", ":m .-2<CR>==")
 vim.keymap.set("n", "<C-a>", "<C-o>")
 
 -- exit terminal mode
-vim.keymap.set('t', '<ESC>', '<C-\\><C-n>')
+vim.keymap.set('t', '<M-q>', '<C-\\><C-n>')
