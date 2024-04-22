@@ -21,13 +21,9 @@ wsl --install
 
 Install [Windwos Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
 
-### Catppuccin Colorscheme
+#### Catppuccin Colorscheme
 
-#### NVim 
-
-Nvim automatically installs the catppuccin frappe colorscheme.
-
-#### Windows Terminal 
+I am using [Catppuccin](https://github.com/catppuccin/catppuccin) as my colorscheme.
 
 ```
 {
@@ -95,6 +91,8 @@ Nvim automatically installs the catppuccin frappe colorscheme.
 }
 ```
 
+In the Terminal Settings > Open JSON file, add the above snippets. Close Windows Terminal Application while you do that. Then reopen and go to Settings > Color schemes and select the newly installed Catppuccin and set it as default.
+
 ### LazyGit
 
 Install [Lazygit](https://github.com/jesseduffield/lazygit) with: 
@@ -108,7 +106,7 @@ sudo install lazygit /usr/local/bin
 
 ### Nerd Font
 
-Install `JetBrainsMono Nerd Font` from [here](https://www.nerdfonts.com/)
+Install `JetBrainsMono Nerd Font` from [here](https://www.nerdfonts.com/) and set is as default Font in Windows Terminal. And while you are there you might want to set Ubuntu as default Terminal and disable the tabs. 
 
 ### AutoHotkey
 
@@ -126,23 +124,49 @@ FileCreateShortcut "C:\path_to_documents\capslockToESC.ahk", "C:\Users\<username
 
 ## Setting up WSL for Development
 
-Taken from a nice [blogpost](https://dev.to/nexxeln/my-developer-workflow-using-wsl-tmux-and-neovim-55f5).
-
-All Commands:
+### Preliminaries
 
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y build-essential
+```
+
+### Installing Neovim
+
+```
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y neovim
+```
+
+### Install and apply Starship
+
+```
 curl -sS https://starship.rs/install.sh | sh
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
+```
+
+### Install tmux
+
+```
+sudo apt-get install tmux
+```
+
+### Using my configuration for Neovim, Starship and Tmux
+
+```
 git clone https://github.com/Spanching/init.lua.git ~/.config/nvim
 cp ~/.config/nvim/starship.toml ~/.config/starship.toml 
 cp ~/.config/nvim/.tmux.conf ~/.tmux.conf 
 TMUX_CONF=~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+To apply this config to tmux and download all necessary repos, go in temux and run "<leader>I" (multiple times sometimes). It should then load the theme.
+
+### Install additional Software
+
+```
 sudo apt install -y fd-find ripgrep
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
@@ -151,60 +175,6 @@ sudo install lazygit /usr/local/bin
 sudo apt install -y nodejs npm python3-pip
 pip install pyright
 PATH="$PATH:$HOME/.local/bin"
-```
-
-### install build tools 
-
-```
-sudo apt install -y build-essential
-```
-
-### Install NeoVim 
-
-```
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt update && sudo apt -y upgrade
-sudo apt install neovim
-```
-
-### Install starship 
-
-```
-curl -sS https://starship.rs/install.sh | sh
-echo 'eval "$(starship init bash)"' >> ~/.bashrc
-```
-
-### clone this repository 
-
-```
-git clone https://github.com/Spanching/init.lua.git ~/.config/nvim
-```
-### Move configuration files 
-
-```
-cp ~/.config/nvim/starship.toml ~/.config/starship.toml 
-cp ~/.config/nvim/.tmux.conf ~/.tmux.conf 
-TMUX_CONF=~/.tmux.conf
-```
-
-### install requirements
-```
-sudo apt install -y fd-find ripgrep
-```
-
-### Install LazyGit
-
-```
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
-```
-
-### Install node and npm
-
-```
-sudo apt install nodejs npm
 ```
 
 # Using NVIM for Java Development
