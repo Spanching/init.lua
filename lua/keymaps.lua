@@ -46,3 +46,7 @@ vim.keymap.set("n", "<C-a>", "<C-o>")
 
 -- exit terminal mode
 vim.keymap.set('t', '<M-q>', '<C-\\><C-n>')
+
+-- method jumping
+vim.keymap.set('n', '<leader>mn', ']m')
+vim.keymap.set('n', '<leader>mp', '[m')

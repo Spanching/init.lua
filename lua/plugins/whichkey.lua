@@ -95,6 +95,24 @@ return
                 m = "Test Method",
                 s = "Goto Subjects",
             },
+            m = {
+                name = "Method",
+                n = "Next",
+                p = "Previous",
+            },
+            F = {
+                name = "Find with Selection",
+                f = "Find word in File",
+                g = "Grep word in all files",
+                b = "Find word in Buffer",
+                h = "Find word in in Help",
+                r = "Find word in in Repository",
+                F = "Find Word in File",
+                G = "Grep Word in all files",
+                B = "Find Word in Buffer",
+                H = "Find Word in in Help",
+                R = "Find Word in in Repository",
+            },
         }, { prefix = "<leader>" })
     end
 }

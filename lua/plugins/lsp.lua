@@ -23,7 +23,12 @@ return {
 				})
 			end
 
+            capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true
+            }
 			lspconfig["lua_ls"].setup({
+                capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -40,7 +45,7 @@ return {
 					-- Buffer local mappings.
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local opts = { buffer = ev.buf }
-					-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 					-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 					-- vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
 					-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)

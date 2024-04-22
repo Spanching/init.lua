@@ -60,6 +60,11 @@ return {
                     path_display = filenameFirst,
                     theme = "dropdown",
                 },
+                grep_string = {
+                    path_display = filenameFirst,
+                    theme = "dropdown",
+                    initial_mode = "normal",
+                },
                 find_files = {
                     path_display = filenameFirst,
                     theme = "dropdown",
@@ -78,8 +83,23 @@ return {
         vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
         vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+        vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
 
-        vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+        vim.keymap.set("n", "<leader>Ff", function() builtin.find_files({ default_text = vim.fn.expand("<cword>") }) end, {})
+        vim.keymap.set("n", "<leader>Fr", function() builtin.git_files({ default_text = vim.fn.expand("<cword>") }) end, {})
+        vim.keymap.set("n", "<leader>Fg", function() builtin.live_grep({ default_text = vim.fn.expand("<cword>") }) end, {})
+        vim.keymap.set("n", "<leader>Fb", function() builtin.buffers({ default_text = vim.fn.expand("<cword>") }) end, {})
+        vim.keymap.set("n", "<leader>Fh", function() builtin.help_tags({ default_text = vim.fn.expand("<cword>") }) end, {})
+        vim.keymap.set("n", "<leader>Fs", function() builtin.grep_string({ default_text = vim.fn.expand("<cword>") }) end, {})
+
+        vim.keymap.set("n", "<leader>FF", function() builtin.find_files({ default_text = vim.fn.expand("<cWORD>") }) end, {})
+        vim.keymap.set("n", "<leader>FR", function() builtin.git_files({ default_text = vim.fn.expand("<cWORD>") }) end, {})
+        vim.keymap.set("n", "<leader>FG", function() builtin.live_grep({ default_text = vim.fn.expand("<cWORD>") }) end, {})
+        vim.keymap.set("n", "<leader>FB", function() builtin.buffers({ default_text = vim.fn.expand("<cWORD>") }) end, {})
+        vim.keymap.set("n", "<leader>FH", function() builtin.help_tags({ default_text = vim.fn.expand("<cWORD>") }) end, {})
+        vim.keymap.set("n", "<leader>FS", function() builtin.grep_string({ default_text = vim.fn.expand("<cWORD>") }) end, {})
+
+        -- vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
         vim.keymap.set("n", "gr", builtin.lsp_references, {})
         vim.keymap.set("n", "gI", builtin.lsp_implementations, {})
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
