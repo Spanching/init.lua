@@ -176,6 +176,13 @@ sudo apt install -y nodejs npm python3-pip
 pip install pyright
 PATH="$PATH:$HOME/.local/bin"
 ```
+#### Using Docker in wsl2
+
+I use Rancher Desktop so for me I have to link the docker command from my Windows Installation to wsl2 like this:
+
+```
+cd /usr/local/bin && sudo ln -s /mnt/c/Users/<user>/AppData/Local/Programs/Rancher\ Desktop/resources/resources/linux/bin/docker
+```
 
 # Using NVIM for Java Development
 
