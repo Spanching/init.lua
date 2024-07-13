@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+-- Exit insert mode with jk 
+vim.keymap.set("i", "jk", "<ESC>")
+
 -- faster write, quit
 vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>q", ":q<cr>")
