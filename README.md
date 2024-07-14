@@ -96,7 +96,7 @@ Install Scoop [here](https://scoop.sh/)
 ### Required Software
 
 ```
-choco install neovim fzf gzip wget make lua luarocks bat delta grep fd ripgrep lazygit starship
+choco install neovim fzf gzip wget make lua luarocks bat delta grep fd ripgrep lazygit starship nodejs
 ```
 
 ### PowerShell Profile
@@ -126,31 +126,52 @@ function Git-CheckoutMaster {
 Set-Alias gitcm Git-CheckoutMaster
 ```
 
-### Using my neovim configuration
+### PowerShell fzf
+
+```
+Install-Module -Name PSFzf
+```
+
+### install treesitter cli 
+
+```
+npm install -g tree-sitter-cli
+```
+
+### using my neovim configuration
+
+```
+cd .config\
+git clone https://github.com/Spanching/init.lua.git nvim
+cp ~/.config/nvim/starship.toml ~/.config/starship.toml 
+cp ~/.config/nvim/.tmux.conf ~/.tmux.conf 
+TMUX_CONF=~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
 
 
-## WSL Based Setup
+## wsl based setup
 
-### WSL 
+### wsl 
 
-Install WSL and make sure it is version 2:
+install wsl and make sure it is version 2:
 
 ```pwsh
 wsl --install
 ```
 
-### Windows Terminal 
+### windows terminal 
 
-Install [Windwos Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
+install [windwos terminal](https://apps.microsoft.com/store/detail/windows-terminal/9n0dx20hk701)
 
-#### Catppuccin Colorscheme
+#### catppuccin colorscheme
 
-I am using [Catppuccin](https://github.com/catppuccin/catppuccin) as my colorscheme.
+i am using [catppuccin](https://github.com/catppuccin/catppuccin) as my colorscheme.
 
 ```
 {
-  "launchMode": "maximized",
+  "launchmode": "maximized",
 }
 ```
 
@@ -160,31 +181,31 @@ I am using [Catppuccin](https://github.com/catppuccin/catppuccin) as my colorsch
     "schemes":
     [
         {
-          "name": "Catppuccin Frappe",
+          "name": "catppuccin frappe",
 
-          "cursorColor": "#F2D5CF",
-          "selectionBackground": "#626880",
+          "cursorcolor": "#f2d5cf",
+          "selectionbackground": "#626880",
 
           "background": "#303446",
-          "foreground": "#C6D0F5",
+          "foreground": "#c6d0f5",
 
-          "black": "#51576D",
-          "red": "#E78284",
-          "green": "#A6D189",
-          "yellow": "#E5C890",
-          "blue": "#8CAAEE",
-          "purple": "#F4B8E4",
-          "cyan": "#81C8BE",
-          "white": "#B5BFE2",
+          "black": "#51576d",
+          "red": "#e78284",
+          "green": "#a6d189",
+          "yellow": "#e5c890",
+          "blue": "#8caaee",
+          "purple": "#f4b8e4",
+          "cyan": "#81c8be",
+          "white": "#b5bfe2",
 
-          "brightBlack": "#626880",
-          "brightRed": "#E78284",
-          "brightGreen": "#A6D189",
-          "brightYellow": "#E5C890",
-          "brightBlue": "#8CAAEE",
-          "brightPurple": "#F4B8E4",
-          "brightCyan": "#81C8BE",
-          "brightWhite": "#A5ADCE"
+          "brightblack": "#626880",
+          "brightred": "#e78284",
+          "brightgreen": "#a6d189",
+          "brightyellow": "#e5c890",
+          "brightblue": "#8caaee",
+          "brightpurple": "#f4b8e4",
+          "brightcyan": "#81c8be",
+          "brightwhite": "#a5adce"
         }
     ],
 }
@@ -196,65 +217,65 @@ I am using [Catppuccin](https://github.com/catppuccin/catppuccin) as my colorsch
     "themes":
     [
         {
-          "name": "Catppuccin Frappe",
+          "name": "catppuccin frappe",
           "tab": {
-            "background": "#303446FF",
-            "showCloseButton": "always",
-            "unfocusedBackground": null
+            "background": "#303446ff",
+            "showclosebutton": "always",
+            "unfocusedbackground": null
           },
-          "tabRow": {
-            "background": "#292C3CFF",
-            "unfocusedBackground": "#232634FF"
+          "tabrow": {
+            "background": "#292c3cff",
+            "unfocusedbackground": "#232634ff"
           },
           "window": {
-            "applicationTheme": "dark"
+            "applicationtheme": "dark"
           }
         }
     ],
 }
 ```
 
-In the Terminal Settings > Open JSON file, add the above snippets. Close Windows Terminal Application while you do that. Then reopen and go to Settings > Color schemes and select the newly installed Catppuccin and set it as default.
+in the terminal settings > open json file, add the above snippets. close windows terminal application while you do that. then reopen and go to settings > color schemes and select the newly installed catppuccin and set it as default.
 
-### LazyGit
+### lazygit
 
-Install [Lazygit](https://github.com/jesseduffield/lazygit) with: 
+install [lazygit](https://github.com/jesseduffield/lazygit) with: 
 
 ```
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+lazygit_version=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -po '"tag_name": "v\k[^"]*')
+curl -lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${lazygit_version}_linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 ```
 
-### Nerd Font
+### nerd font
 
-Install `JetBrainsMono Nerd Font` from [here](https://www.nerdfonts.com/) and set is as default Font in Windows Terminal. And while you are there you might want to set Ubuntu as default Terminal and disable the tabs. 
+install `jetbrainsmono nerd font` from [here](https://www.nerdfonts.com/) and set is as default font in windows terminal. and while you are there you might want to set ubuntu as default terminal and disable the tabs. 
 
-### AutoHotkey
+### autohotkey
 
-To map Esc to Caps Lock, install [AutoHotKey](https://www.autohotkey.com/).
+to map esc to caps lock, install [autohotkey](https://www.autohotkey.com/).
 
-The mapping can be done with just this config in a ```.ahk``` file usually located in ```~\Documents\AutoHotKey```:
+the mapping can be done with just this config in a ```.ahk``` file usually located in ```~\documents\autohotkey```:
 
 ```
-#Requires AutoHotkey v2.0
+#requires autohotkey v2.0
 
-Capslock::Esc
+capslock::esc
 
-FileCreateShortcut "C:\path_to_documents\capslockToESC.ahk", "C:\Users\<username>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\capslockToESC.lnk"
+filecreateshortcut "c:\path_to_documents\capslocktoesc.ahk", "c:\users\<username>\appdata\roaming\microsoft\windows\start menu\programs\startup\capslocktoesc.lnk"
 ```
 
-## Setting up WSL for Development
+## setting up wsl for development
 
-### Preliminaries
+### preliminaries
 
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y build-essential
 ```
 
-### Installing Neovim
+### installing neovim
 
 ```
 sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -262,20 +283,20 @@ sudo apt update && sudo apt -y upgrade
 sudo apt install -y neovim
 ```
 
-### Install and apply Starship
+### install and apply starship
 
 ```
-curl -sS https://starship.rs/install.sh | sh
+curl -ss https://starship.rs/install.sh | sh
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 ```
 
-### Install tmux
+### install tmux
 
 ```
 sudo apt-get install tmux
 ```
 
-### Using my configuration for Neovim, Starship and Tmux
+### using my configuration for neovim, starship and tmux
 
 ```
 git clone https://github.com/Spanching/init.lua.git ~/.config/nvim
