@@ -96,7 +96,7 @@ Install Scoop [here](https://scoop.sh/)
 ### Required Software
 
 ```
-choco install neovim fzf gzip wget make lua luarocks bat delta grep fd ripgrep lazygit starship nodejs
+choco install neovim fzf gzip wget make lua luarocks grep fd ripgrep lazygit starship nodejs
 ```
 
 ### PowerShell Profile
@@ -136,6 +136,58 @@ Install-Module -Name PSFzf
 
 ```
 npm install -g tree-sitter-cli
+```
+
+### Install bat
+
+```
+choco install bat
+```
+Now download the catppuccin theme for bat
+```
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Latte.tmTheme
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Macchiato.tmTheme
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+```
+Now you can change the theme to catppuccin by editing the configuration file
+```
+nvim $(bat --config-file)
+```
+And add the following line:
+```
+--theme="Catppuccin Frappe"
+```
+
+### Install delta
+
+For nicer git diffs install delta:
+``` 
+choco install delta
+```
+Get catppuccin theme for delta
+```
+cd $HOME\.config\
+git clone https://github.com/catppuccin/delta.git delta
+```
+Use delta for default git diffs:
+```
+nvim .\.gitconfig
+```
+Add the following configurations to this (change the Path to absolute):
+```
+[include]
+    path = $HOME/.config/delta/catppuccin.gitconfig
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    side-by-side = true
+    features = catppuccin-frappe
+[diff]
+    colorMoved = default
 ```
 
 ### using my neovim configuration

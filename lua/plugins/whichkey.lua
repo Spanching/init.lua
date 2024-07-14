@@ -8,111 +8,111 @@ return
     end,
     config = function()
         local wk = require("which-key")
+        wk.add({
+            { "<leader>f",   group = "find" }, -- Group declaration
+            { "<leader><",   desc = "Move Tab Left" },
+            { "<leader>>",   desc = "Move Tab Right" },
+            { "<leader>nh",  desc = "No highlighting" },
+            { "<leader>u",   desc = "Undo Tree" },
+            { "<leader>w",   desc = "Write file" },
+            { "<leader>D",   desc = "Type definition" },
+            { "<leader>q",   desc = "Quit" },
+            { "<leader>rn",  desc = "Rename Symbol" },
+            { "<leader>s",   desc = "Leap forward" },
+            { "<leader>S",   desc = "Leap backward" },
 
-        wk.register({
-            ["<"] = "Move Tab Left",
-            [">"] = "Move Tab Right",
-            f = {
-                name = "Find",
-                f = "Find File",
-                g = "Grep all files",
-                b = "Find Buffer",
-                h = "Find in Help",
-                r = "Find in Repository",
-            },
-            nh = "No highlighting",
-            fm = {
-                name = "Format",
-                f = "Format File"
-            },
-            e = {
-                name = "Explorer",
-                e = "Toggle Explorer",
-                f = "Focus Explorer",
-            },
-            b = {
-                name = "Buffer",
-                n = "Buffer Next",
-                p = "Buffer Previous",
-                c = "Buffer Close",
-                e = "Buffermanager Quick Menu"
-            },
-            l = {
-                name = "Line",
-                d = "duplicate",
-                j = "Move Down",
-                k = "Move Up",
-            },
-            g = {
-                name = "Git",
-                g = "Open Lazy Git",
-                p = "Preview Hunk",
-                f = "Git Fetch",
-                b = "Git Branch",
-            },
-            u = "Undo Tree",
-            w = "Write file",
-            d = {
-                name = "Debug",
-                m = "Main Class Configs",
-                b = "Breakpoint",
-                r = "Open REPL",
-                l = "Run Last",
-                x = "Terminate",
-                a = "Restart (Again)",
-                h = "Hover",
-                p = "Preview",
-                f = "Frames",
-                s = "Scope",
-                c = "Close Dap UI",
-            },
-            c = {
-                name = "Copilot",
-                a = "Code action",
-                p = "Open Copilot Panel",
-                c = "Copilot Chat",
-            },
-            h = {
-                name = "Harpoon",
-                a = "Append File",
-                r = "Remove File",
-                e = "Quick Menu (Explorer)",
-                h = "Select 1",
-                j = "Select 2",
-                k = "Select 3",
-                l = "Select 4",
-                p = "Previous",
-                n = "Next",
-            },
-            D = "Type definition",
-            q = "Quit",
-            rn = "Rename Symbol",
-            s = "Leap forward",
-            S = "Leap backward",
-            t = {
-                name = "Test",
-                c = "Test Class",
-                m = "Test Method",
-                s = "Goto Subjects",
-            },
-            m = {
-                name = "Method",
-                n = "Next",
-                p = "Previous",
-            },
-            F = {
-                name = "Find with Selection",
-                f = "Find word in File",
-                g = "Grep word in all files",
-                b = "Find word in Buffer",
-                h = "Find word in in Help",
-                r = "Find word in in Repository",
-                F = "Find Word in File",
-                G = "Grep Word in all files",
-                B = "Find Word in Buffer",
-                H = "Find Word in in Help",
-                R = "Find Word in in Repository",
-            },
-        }, { prefix = "<leader>" })
+            -- Find group
+            { "<leader>ff",  desc = "Find File" },
+            { "<leader>fg",  desc = "Grep all files" },
+            { "<leader>fb",  desc = "Find Buffer" },
+            { "<leader>fh",  desc = "Find in Help" },
+            { "<leader>fr",  desc = "Find in Repository" },
+
+            -- Format group
+            { "<leader>fm",  group = "Format" },
+            { "<leader>fmf", desc = "Format File" },
+
+            -- Explorer group
+            { "<leader>e",   group = "Explorer" },
+            { "<leader>ee",  desc = "Toggle Explorer" },
+            { "<leader>ef",  desc = "Focus Explorer" },
+
+            -- Buffer group
+            { "<leader>b",   group = "Buffer" },
+            { "<leader>bn",  desc = "Buffer Next" },
+            { "<leader>bp",  desc = "Buffer Previous" },
+            { "<leader>bc",  desc = "Buffer Close" },
+            { "<leader>be",  desc = "Buffermanager Quick Menu" },
+
+            -- Line group
+            { "<leader>l",   group = "Line" },
+            { "<leader>ld",  desc = "Duplicate" },
+            { "<leader>lj",  desc = "Move Down" },
+            { "<leader>lk",  desc = "Move Up" },
+
+            -- Git group
+            { "<leader>g",   group = "Git" },
+            { "<leader>gg",  desc = "Open Lazy Git" },
+            { "<leader>gp",  desc = "Preview Hunk" },
+            { "<leader>gf",  desc = "Git Fetch" },
+            { "<leader>gb",  desc = "Git Branch" },
+
+            -- Debug group
+            { "<leader>d",   group = "Debug" },
+            { "<leader>dm",  desc = "Main Class Configs" },
+            { "<leader>db",  desc = "Breakpoint" },
+            { "<leader>dr",  desc = "Open REPL" },
+            { "<leader>dl",  desc = "Run Last" },
+            { "<leader>dx",  desc = "Terminate" },
+            { "<leader>da",  desc = "Restart (Again)" },
+            { "<leader>dh",  desc = "Hover" },
+            { "<leader>dp",  desc = "Preview" },
+            { "<leader>df",  desc = "Frames" },
+            { "<leader>ds",  desc = "Scope" },
+            { "<leader>dc",  desc = "Close Dap UI" },
+
+            -- Copilot group
+            { "<leader>c",   group = "Copilot" },
+            { "<leader>ca",  desc = "Code action" },
+            { "<leader>cp",  desc = "Open Copilot Panel" },
+            { "<leader>cc",  desc = "Copilot Chat" },
+
+            -- Harpoon group
+            { "<leader>h",   group = "Harpoon" },
+            { "<leader>ha",  desc = "Append File" },
+            { "<leader>hr",  desc = "Remove File" },
+            { "<leader>he",  desc = "Quick Menu (Explorer)" },
+            { "<leader>hh",  desc = "Select 1" },
+            { "<leader>hj",  desc = "Select 2" },
+            { "<leader>hk",  desc = "Select 3" },
+            { "<leader>hl",  desc = "Select 4" },
+            { "<leader>hp",  desc = "Previous" },
+            { "<leader>hn",  desc = "Next" },
+
+            -- Test group
+            { "<leader>t",   group = "Test" },
+            { "<leader>tc",  desc = "Test Class" },
+            { "<leader>tm",  desc = "Test Method" },
+            { "<leader>ts",  desc = "Goto Subjects" },
+
+            -- Method group
+            { "<leader>m",   group = "Method" },
+            { "<leader>mn",  desc = "Next" },
+            { "<leader>mp",  desc = "Previous" },
+
+            -- Find with Selection group
+            { "<leader>F",   group = "Find with Selection" },
+            { "<leader>Ff",  desc = "Find word in File" },
+            { "<leader>Fg",  desc = "Grep word in all files" },
+            { "<leader>Fb",  desc = "Find word in Buffer" },
+            { "<leader>Fh",  desc = "Find word in in Help" },
+            { "<leader>Fr",  desc = "Find word in in Repository" },
+            { "<leader>FF",  desc = "Find Word in File" },
+            { "<leader>FG",  desc = "Grep Word in all files" },
+            { "<leader>FB",  desc = "Find Word in Buffer" },
+            { "<leader>FH",  desc = "Find Word in in Help" },
+            { "<leader>FR",  desc = "Find Word in in Repository" },
+        }
+        )
     end
 }
