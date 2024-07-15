@@ -3,7 +3,7 @@ return {
     config = function()
         require("auto-save").setup {
             condition = function(buf)
-                if vim.loop.cwd() == "C:\\Users\\andre\\.config\\nvim" then
+                if string.match(vim.loop.cwd(), ".config\\nvim$") then
                     return false
                 end
                 local fn = vim.fn
