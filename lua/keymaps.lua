@@ -44,9 +44,6 @@ vim.keymap.set("n", "<leader>ld", "yyp")
 vim.keymap.set("n", "<leader>lj", ":m .+1<CR>==")
 vim.keymap.set("n", "<leader>lk", ":m .-2<CR>==")
 
--- remap C-o for tmux
-vim.keymap.set("n", "<C-a>", "<C-o>")
-
 -- exit terminal mode
 vim.keymap.set('t', '<M-q>', '<C-\\><C-n>')
 

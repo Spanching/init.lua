@@ -1,27 +1,37 @@
 return {
   {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
-    }
-  },
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
-      "rcarriga/nvim-dap-ui"
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio"
     },
     config = function()
       local dap = require('dap')
-      dap.configurations.java = {
-        {
-          type = 'java',
-          request = 'attach',
-          name = "Debug (Attach) - Remote",
-          hostName = "127.0.0.1",
-          port = 6105,
-        },
-      }
+      -- -- Modify your existing configuration to minimize length
+      -- dap.adapters.java = {
+      --   type = 'executable',
+      --   command = 'java',
+      --   args = { '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:{port}', '-cp', 'shortened_classpath' }
+      -- }
+      --
+      -- dap.configurations.java = {
+      --   {
+      --     type = 'java',
+      --     request = 'launch',
+      --     name = "Debug (Launch)",
+      --     mainClass = "${file}",
+      --     projectRoot = "${workspaceFolder}",
+      --   }
+      -- }
+      -- dap.configurations.java = {
+      --   {
+      --     type = 'java',
+      --     request = 'attach',
+      --     name = "Debug (Attach) - Remote",
+      --     hostName = "127.0.0.1",
+      --     port = 6105,
+      --   },
+      -- }
       local dapui = require("dapui")
       dapui.setup()
       dap.listeners.before.attach.dapui_config = function()
