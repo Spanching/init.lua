@@ -6,7 +6,7 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
     config = function()
-      local servers = { "pyright", "lua_ls", "marksman" }
+      local servers = { "pyright", "lua_ls", "marksman", "jsonls" }
 
       require("mason").setup()
       require("mason-lspconfig").setup({
