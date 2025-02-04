@@ -1,3 +1,10 @@
+function IsHarpoon (buf)
+  if vim.bo[buf].filetype == "harpoon" then
+    return true
+  end
+  error()
+end
+
 return {
     "Pocco81/auto-save.nvim",
     config = function()
@@ -6,7 +13,7 @@ return {
                 if string.match(vim.loop.cwd(), ".config\\nvim$") then
                     return false
                 end
-                if pcall(function () return vim.bo[buf].filetype == "harpoon" end) then
+                if pcall(IsHarpoon, buf) then
                   return false
                 end
                 local fn = vim.fn
